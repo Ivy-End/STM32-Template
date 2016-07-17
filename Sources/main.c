@@ -7,6 +7,15 @@ int main(void)
 	SysTick_Init(1, SYSTICK_MS);
 	LED_On(LED_2 | LED_3);
 	SysTick_Delay(1000, SYSTICK_MS);
-	LED_Toggle(LED_3);
-	while(1);
+	LED_Off(LED_2 | LED_3);
+	Key_Init(KEY_S1 | KEY_S2 | KEY_S3 | KEY_S4);
+	while(1)
+	{
+		Key_Loop();
+		if(Key_Detect(KEY_S1, KEY_DOWN)) { LED_Toggle(LED_2); }
+		if(Key_Detect(KEY_S2, KEY_DOWN)) { LED_Toggle(LED_3); }
+		if(Key_Detect(KEY_S3, KEY_DOWN)) { LED_Off(LED_2); }
+		if(Key_Detect(KEY_S4, KEY_DOWN)) { LED_Off(LED_3); }
+		
+	}
 }
