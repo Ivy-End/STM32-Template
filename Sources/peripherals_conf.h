@@ -4,5 +4,6 @@
 #include "LED.h"
 #include "SysTick.h"
 #include "Key.h"
+#include "Beep.h"
 
 #endif

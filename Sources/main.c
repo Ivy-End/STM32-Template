@@ -4,9 +4,12 @@
 int main(void)
 {
 	LED_Init(LED_2 | LED_3);
+	Beep_Init();
 	SysTick_Init(1, SYSTICK_MS);
 	LED_On(LED_2 | LED_3);
-	SysTick_Delay(1000, SYSTICK_MS);
+	//Beep_On();
+	SysTick_Delay(200, SYSTICK_MS);
+	//Beep_Off();
 	LED_Off(LED_2 | LED_3);
 	Key_Init(KEY_S1 | KEY_S2 | KEY_S3 | KEY_S4);
 	while(1)
