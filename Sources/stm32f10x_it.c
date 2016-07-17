@@ -23,6 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
+#include "SysTick.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -133,8 +134,7 @@ void PendSV_Handler(void)
   * @retval None
   */
 void SysTick_Handler(void)
-{
-}
+{ SysTick_Decrement(); }
 
 /******************************************************************************/
 /*                 STM32F10x Peripherals Interrupt Handlers                   */
