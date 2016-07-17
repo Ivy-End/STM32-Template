@@ -5,5 +5,6 @@
 #include "SysTick.h"
 #include "Key.h"
 #include "Beep.h"
+#include "Usart.h"
 
 #endif
