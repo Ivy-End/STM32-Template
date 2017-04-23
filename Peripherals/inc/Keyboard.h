@@ -1,0 +1,44 @@
+#ifndef __KEYBOARD_H_
+#define __KEYBOARD_H_
+
+#include "stm32f10x.h"
+
+#define KEYBOARD_S1					0x0000FFFE
+#define KEYBOARD_S2					0x0000FFFD
+#define KEYBOARD_S3					0x0000FFFB
+#define KEYBOARD_S4					0x0000FFF7
+#define KEYBOARD_S5					0x0000FFEF
+#define KEYBOARD_S6					0x0000FFDF
+#define KEYBOARD_S7 				0x0000FFBF
+#define KEYBOARD_S8 				0x0000FF7F
+#define KEYBOARD_S9 				0x0000FEFF
+#define KEYBOARD_S10				0x0000FDFF
+#define KEYBOARD_S11				0x0000FBFF
+#define KEYBOARD_S12				0x0000F7FF
+#define KEYBOARD_S13				0x0000EFFF
+#define KEYBOARD_S14				0x0000DFFF
+#define KEYBOARD_S15				0x0000BFFF
+#define KEYBOARD_S16				0x00007FFF
+#define KEYBOARD_NULL				0x0000FFFF
+
+#define KEYBOARD_LONG_PERIOD		100
+#define KEYBOARD_CONTINUE_PERIOD	25
+
+#define KEYBOARD_UP					0x00010000
+#define KEYBOARD_CONTINUE			0x00020000
+#define KEYBOARD_LONG				0x00040000
+#define KEYBOARD_DOWN				0x00080000
+                              
+#define KEYBOARD_STATE_INIT			0x00000001
+#define KEYBOARD_STATE_WOBBLE		0x00000002
+#define KEYBOARD_STATE_PRESS		0x00000003
+#define KEYBOARD_STATE_LONG			0x00000004
+#define KEYBOARD_STATE_CONTINUE		0x00000005
+#define KEYBOARD_STATE_RELEASE		0x00000006
+
+void Keyboard_Init(void);
+uint32_t Keyboard_Scan(void);
+void Keyboard_Loop(void);
+uint8_t Keyboard_Detect(uint32_t Key, uint32_t Status);
+
+#endif
